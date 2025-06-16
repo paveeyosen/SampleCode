@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Healing | Holistic Wellness Services</title>
+    <meta name="description" content="Discover inner peace and healing with our holistic services including sound healing, crystal therapy, aromatherapy, and mindfulness meditation.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-heading font-bold text-purple-700">
+                    <a href="#home" class="flex items-center">
+                        <span class="text-purple-600 mr-2"><i class="fas fa-spa"></i></span>
+                        Serene Healing
+                    </a>
+                </h1>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-purple-700 font-medium hover:text-purple-500 transition-all">Home</a>
+                <a href="#services" class="text-gray-600 font-medium hover:text-purple-500 transition-all">Services</a>
+                <a href="#products" class="text-gray-600 font-medium hover:text-purple-500 transition-all">Products</a>
+                <a href="#about" class="text-gray-600 font-medium hover:text-purple-500 transition-all">About</a>
+                <a href="#testimonials" class="text-gray-600 font-medium hover:text-purple-500 transition-all">Testimonials</a>
+                <a href="#contact" class="text-gray-600 font-medium hover:text-purple-500 transition-all">Contact</a>
+            </nav>
+            
+            <button onclick="scrollToSection('booking')" class="hidden md:block bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition-all">
+                Book Now
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav id="mobileMenu" class="hidden px-4 py-3 bg-white md:hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" onclick="toggleMobileMenu()" class="text-purple-700 font-medium text-left">Home</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="text-gray-600 font-medium text-left">Services</a>
+                <a href="#products" onclick="toggleMobileMenu()" class="text-gray-600 font-medium text-left">Products</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="text-gray-600 font-medium text-left">About</a>
+                <a href="#testimonials" onclick="toggleMobileMenu()" class="text-gray-600 font-medium text-left">Testimonials</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="text-gray-600 font-medium text-left">Contact</a>
+                <button onclick="scrollToSection('booking'); toggleMobileMenu()" class="bg-purple-600 text-white px-6 py-2 rounded-full w-full">
+                    Book Now
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/70 to-purple-600/70 z-10"></div>
+        <div class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')">
+            <div class="container mx-auto px-4 h-full flex items-center z-20 relative">
+                <div class="max-w-2xl text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
+                        Discover Inner Peace and Healing
+                    </h1>
+                    <p class="text-xl mb-8">
+                        Embark on a journey to wellness with our holistic healing services designed to restore balance to your mind, body, and spirit.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="scrollToSection('services')" class="bg-white text-purple-700 hover:bg-gray-100 font-medium px-8 py-3 rounded-full text-center transition-all">
+                            Explore Services
+                        </button>
+                        <button onclick="scrollToSection('booking')" class="bg-purple-600 text-white hover:bg-purple-700 font-medium px-8 py-3 rounded-full text-center transition-all">
+                            Book a Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-purple-800">
+                    Welcome to Serene Healing
+                </h2>
+                <p class="text-lg text-gray-600">
+                    We believe in the power of holistic healing to transform lives. Our carefully curated services combine ancient wisdom with modern techniques to provide a comprehensive approach to wellness.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-purple-50 p-8 rounded-xl text-center">
+                    <div class="text-purple-600 text-4xl mb-4 flex justify-center">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-purple-800">Holistic Approach</h3>
+                    <p class="text-gray-600">
+                        We treat the whole person, addressing the interconnected nature of physical, emotional, and spiritual health.
+                    </p>
+                </div>
+                
+                <div class="bg-purple-50 p-8 rounded-xl text-center">
+                    <div class="text-purple-600 text-4xl mb-4 flex justify-center">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-purple-800">Certified Practitioners</h3>
+                    <p class="text-gray-600">
+                        Our team consists of experienced, certified professionals dedicated to your healing journey.
+                    </p>
+                </div>
+                
+                <div class="bg-purple-50 p-8 rounded-xl text-center">
+                    <div class="text-purple-600 text-4xl mb-4 flex justify-center">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 text-purple-800">Natural Products</h3>
+                    <p class="text-gray-600">
+                        We use only the highest quality, natural products to complement our healing services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-purple-800">
+                    Our Healing Services
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Discover our range of holistic healing services designed to promote wellness and balance in your life.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Sound Healing -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                    <img src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Sound Healing service" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-4 text-purple-800">Sound Healing</h3>
+                        <p class="text-gray-600 mb-6">
+                            Experience the therapeutic power of sound vibrations to reduce stress, alleviate pain, and promote deep relaxation. Our sound healing sessions use Tibetan singing bowls, tuning forks, and voice to create harmonic resonance that balances your energy centers.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">60-90 minutes</span>
+                            <button onclick="scrollToSection('booking')" class="text-purple-700 hover:text-purple-500 font-medium flex items-center">
+                                Book Session <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crystal Healing -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                    <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Crystal Healing service" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-4 text-purple-800">Crystal Healing</h3>
+                        <p class="text-gray-600 mb-6">
+                            Harness the natural energy of crystals to restore balance and harmony to your body's energy field. Each crystal possesses unique properties that can help remove energy blockages, promote healing, and enhance overall wellbeing.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">45-60 minutes</span>
+                            <button onclick="scrollToSection('booking')" class="text-purple-700 hover:text-purple-500 font-medium flex items-center">
+                                Book Session <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aromatherapy -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Aromatherapy service" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-4 text-purple-800">Aromatherapy</h3>
+                        <p class="text-gray-600 mb-6">
+                            Engage your sense of smell with our therapeutic-grade essential oils to influence physical, emotional, and mental health. Our aromatherapy sessions combine massage techniques with carefully selected essential oil blends to address your specific needs.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">60 minutes</span>
+                            <button onclick="scrollToSection('booking')" class="text-purple-700 hover:text-purple-500 font-medium flex items-center">
+                                Book Session <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mindfulness Meditation -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                    <img src="https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Mindfulness Meditation service" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-heading font-bold mb-4 text-purple-800">Mindfulness Meditation</h3>
+                        <p class="text-gray-600 mb-6">
+                            Learn the art of being present through our guided mindfulness meditation sessions. Develop a greater awareness of your thoughts, feelings, and bodily sensations to reduce stress, improve focus, and cultivate inner peace.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">45-75 minutes</span>
+                            <button onclick="scrollToSection('booking')" class="text-purple-700 hover:text-purple-500 font-medium flex items-center">
+                                Book Session <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-purple-800">
+                    Essential Oil Products
+                </h2>
+                <p class="text-lg text-gray-600">
+                    We proudly offer Doterra essential oils known for their exceptional purity and potency to complement your healing journey.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Lavender Oil -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Lavender Essential Oil" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold mb-2 text-purple-800">Lavender Essential Oil</h3>
+                        <p class="text-gray-600 mb-4">Known for its calming properties, lavender oil helps reduce anxiety and promotes restful sleep.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">₹2,299</span>
+                            <button onclick="orderWhatsApp('Lavender Essential Oil', '₹2,299')" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center transition-all">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peppermint Oil -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1530991808291-7e157454758c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Peppermint Essential Oil" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold mb-2 text-purple-800">Peppermint Essential Oil</h3>
+                        <p class="text-gray-600 mb-4">Invigorating peppermint oil boosts energy, improves focus, and aids in digestion.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">₹1,999</span>
+                            <button onclick="orderWhatsApp('Peppermint Essential Oil', '₹1,999')" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center transition-all">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serenity Blend -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Serenity Blend" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold mb-2 text-purple-800">Serenity Blend</h3>
+                        <p class="text-gray-600 mb-4">A proprietary blend designed to promote relaxation and create a peaceful environment.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">₹2,699</span>
+                            <button onclick="orderWhatsApp('Serenity Blend', '₹2,699')" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center transition-all">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tea Tree Oil -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Tea Tree Essential Oil" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold mb-2 text-purple-800">Tea Tree Essential Oil</h3>
+                        <p class="text-gray-600 mb-4">A powerful oil with cleansing properties for skin, home, and emotional wellbeing.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">₹2,199</span>
+                            <button onclick="orderWhatsApp('Tea Tree Essential Oil', '₹2,199')" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center transition-all">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lemon Oil -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1530991808291-7e157454758c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Lemon Essential Oil" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold mb-2 text-purple-800">Lemon Essential Oil</h3>
+                        <p class="text-gray-600 mb-4">Uplifting citrus oil that purifies the air, elevates mood, and supports healthy digestion.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">₹1,599</span>
+                            <button onclick="orderWhatsApp('Lemon Essential Oil', '₹1,599')" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center transition-all">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness Kit -->
+                <div class="bg-purple-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Beginner's Wellness Kit" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold mb-2 text-purple-800">Beginner's Wellness Kit</h3>
+                        <p class="text-gray-600 mb-4">A curated collection of essential oils to start your journey to wellness and healing.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-600 font-medium">₹7,299</span>
+                            <button onclick="orderWhatsApp('Beginner\'s Wellness Kit', '₹7,299')" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full flex items-center transition-all">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Order on WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Sarah Johnson, Lead Healing Practitioner" class="w-full h-auto rounded-xl shadow-md">
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-purple-800">Meet Your Practitioner</h2>
+                    <h3 class="text-xl font-medium mb-4 text-purple-600">Sarah Johnson, Certified Holistic Healer</h3>
+                    <p class="text-gray-600 mb-6">
+                        With over 15 years of experience in holistic healing practices, Sarah combines traditional wisdom with modern techniques to create personalized healing experiences. Her journey began after experiencing the transformative power of natural healing in her own life.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-6">
+                        Sarah holds certifications in Sound Healing, Crystal Therapy, Aromatherapy, and Mindfulness Meditation. She continually expands her knowledge through ongoing education and research in the field of holistic wellness.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-8">
+                        "My mission is to help you reconnect with your inner wisdom and facilitate the healing process that begins from within. Each session is tailored to your unique needs, creating a safe space for transformation and growth."
+                    </p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-purple-600 hover:text-purple-800 transition-all" aria-label="Instagram">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-purple-600 hover:text-purple-800 transition-all" aria-label="Facebook">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-purple-600 hover:text-purple-800 transition-all" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-purple-800">
+                    Client Testimonials
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Hear from those who have experienced the transformative power of our healing services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-purple-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex justify-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The sound healing session was unlike anything I've experienced before. The vibrations seemed to wash away my stress, leaving me feeling deeply relaxed and renewed. Sarah has an incredible gift."</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-purple-200 flex items-center justify-center text-purple-700 font-medium text-xl">
+                            JM
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-medium text-purple-800">Jennifer M.</h4>
+                            <p class="text-sm text-gray-500">Sound Healing Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex justify-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"I've been using the essential oils from Serene Healing for months now, and they've become an integral part of my daily wellness routine. The quality is exceptional, and the Serenity Blend helps me sleep better than ever."</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-purple-200 flex items-center justify-center text-purple-700 font-medium text-xl">
+                            RT
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-medium text-purple-800">Robert T.</h4>
+                            <p class="text-sm text-gray-500">Product Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex justify-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The crystal healing and mindfulness meditation combo package was exactly what I needed during a particularly stressful time. I've noticed a significant improvement in my anxiety levels and overall sense of wellbeing."</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-purple-200 flex items-center justify-center text-purple-700 font-medium text-xl">
+                            AL
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-medium text-purple-800">Amanda L.</h4>
+                            <p class="text-sm text-gray-500">Regular Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 bg-purple-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Book Your Healing Session</h2>
+                    <p class="text-xl opacity-90">Take the first step towards a balanced and harmonious life. Schedule your session today.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <form id="bookingForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your full name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your email address">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your phone number (optional)">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Select Service</label>
+                            <select name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option value="">Choose a service...</option>
+                                <option value="sound-healing">Sound Healing</option>
+                                <option value="crystal-healing">Crystal Healing</option>
+                                <option value="aromatherapy">Aromatherapy</option>
+                                <option value="meditation">Mindfulness Meditation</option>
+                                <option value="combination">Combination Package</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Preferred Date</label>
+                            <input type="date" name="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Preferred Time</label>
+                            <select name="time" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option value="">Select a time...</option>
+                                <option value="morning">Morning (9am - 12pm)</option>
+                                <option value="afternoon">Afternoon (1pm - 4pm)</option>
+                                <option value="evening">Evening (5pm - 7pm)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label class="block text-gray-700 font-medium mb-2">Additional Information</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Any specific concerns or requirements..."></textarea>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-medium px-6 py-3 rounded-lg w-full transition-all">
+                                Submit Booking Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-purple-800">Get in Touch</h2>
+                        <p class="text-gray-600 mb-8">
+                            Have questions about our services or products? Reach out to us and we'll be happy to assist you on your healing journey.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Location</h3>
+                                    <p class="text-gray-600">123 Serenity Lane, Harmony Hills, CA 94123</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Phone</h3>
+                                    <p class="text-gray-600">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Email</h3>
+                                    <p class="text-gray-600">info@serenehealing.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Hours</h3>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 9am - 7pm<br>
+                                        Saturday: 10am - 5pm<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="font-medium text-gray-800 mb-3">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="h-10 w-10 rounded-full bg-purple-100 text-purple-600 hover:bg-purple-200 flex items-center justify-center transition-all" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-purple-100 text-purple-600 hover:bg-purple-200 flex items-center justify-center transition-all" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-purple-100 text-purple-600 hover:bg-purple-200 flex items-center justify-center transition-all" aria-label="Pinterest">
+                                    <i class="fab fa-pinterest"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-purple-100 text-purple-600 hover:bg-purple-200 flex items-center justify-center transition-all" aria-label="Youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-purple-50 p-8 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-heading font-bold mb-6 text-purple-800">Send Us a Message</h3>
+                            
+                            <form id="contactForm" class="space-y-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                    <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your full name">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                    <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your email address">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Subject</label>
+                                    <input type="text" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Message subject">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                    <textarea name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your message"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-medium px-6 py-3 rounded-lg w-full transition-all">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-purple-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Serene Healing</h3>
+                    <p class="text-purple-200 mb-6">
+                        Empowering holistic wellness through the healing arts. Your journey to balance and harmony begins here.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-purple-200 hover:text-white transition-all" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-purple-200 hover:text-white transition-all" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-purple-200 hover:text-white transition-all" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="text-purple-200 hover:text-white transition-all" aria-label="Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-purple-200 hover:text-white transition-all">Home</a></li>
+                        <li><a href="#services" class="text-purple-200 hover:text-white transition-all">Services</a></li>
+                        <li><a href="#products" class="text-purple-200 hover:text-white transition-all">Products</a></li>
+                        <li><a href="#about" class="text-purple-200 hover:text-white transition-all">About</a></li>
+                        <li><a href="#testimonials" class="text-purple-200 hover:text-white transition-all">Testimonials</a></li>
+                        <li><a href="#contact" class="text-purple-200 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-purple-200 hover:text-white transition-all">Sound Healing</a></li>
+                        <li><a href="#services" class="text-purple-200 hover:text-white transition-all">Crystal Healing</a></li>
+                        <li><a href="#services" class="text-purple-200 hover:text-white transition-all">Aromatherapy</a></li>
+                        <li><a href="#services" class="text-purple-200 hover:text-white transition-all">Mindfulness Meditation</a></li>
+                        <li><a href="#services" class="text-purple-200 hover:text-white transition-all">Combination Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Newsletter</h3>
+                    <p class="text-purple-200 mb-4">
+                        Subscribe to receive updates on new services, products, and wellness tips.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800" aria-label="Email for newsletter">
+                        <button type="submit" class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-r-lg transition-all" aria-label="Subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-purple-800 text-center text-purple-300">
+                <p>&copy; 2024 Serene Healing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll to sections
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // WhatsApp ordering function
+        function orderWhatsApp(productName, productPrice) {
+            const message = `Hi! I'm interested in ordering ${productName} (${productPrice}). Could you please provide more details about availability and ordering?`;
+            const whatsappUrl = `https://wa.me/919003179421?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Form submissions
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+            this.reset();
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you as soon as possible.');
+            this.reset();
+        });
+
+        // Add smooth scrolling to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
